@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 18, 2025 at 02:46 PM
+-- Generation Time: Feb 25, 2025 at 03:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,13 @@ CREATE TABLE `akun` (
   `nisn` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `akun`
+--
+
+INSERT INTO `akun` (`id`, `username`, `password`, `bagian`, `nisn`) VALUES
+(1, 'admin', '202cb962ac59075b964b07152d234b70', 'siswa', '12121212');
+
 -- --------------------------------------------------------
 
 --
@@ -44,13 +51,20 @@ CREATE TABLE `akun` (
 CREATE TABLE `data_siswa` (
   `nisn` varchar(20) NOT NULL,
   `nama_siswa` varchar(100) NOT NULL,
-  `kelas` varchar(10) NOT NULL,
-  `jurusan` varchar(50) NOT NULL,
+  `kelas` varchar(10) DEFAULT NULL,
+  `jurusan` varchar(50) DEFAULT NULL,
   `no_telepon` varchar(15) DEFAULT NULL,
   `nama_pembimbing` varchar(100) DEFAULT NULL,
   `nama_industri` varchar(100) DEFAULT NULL,
   `bidang` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `data_siswa`
+--
+
+INSERT INTO `data_siswa` (`nisn`, `nama_siswa`, `kelas`, `jurusan`, `no_telepon`, `nama_pembimbing`, `nama_industri`, `bidang`) VALUES
+('12121212', 'Admin', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -66,7 +80,7 @@ CREATE TABLE `jurnal` (
   `clock_out` time DEFAULT NULL,
   `kegiatan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+  
 -- --------------------------------------------------------
 
 --
@@ -119,13 +133,13 @@ ALTER TABLE `tokens`
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `tokens`

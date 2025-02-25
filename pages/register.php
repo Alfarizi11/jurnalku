@@ -1,6 +1,10 @@
 <?php
 session_start(); // Mulai session
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 include "../function/koneksi.php";
 
 // Jika form dikirim

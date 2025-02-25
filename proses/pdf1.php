@@ -3,7 +3,7 @@
 require('../libraries/fpdf.php'); // Sesuaikan dengan path jika diperlukan
 
 // Koneksi ke database
-$koneksi = new mysqli("localhost", "root", "", "pkl");
+$koneksi = new mysqli("localhost", "root", "", "jurnalku");
 if ($koneksi->connect_error) {
     die("Koneksi gagal: " . $koneksi->connect_error);
 }
